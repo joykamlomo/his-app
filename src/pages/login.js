@@ -6,6 +6,7 @@ function login() {
   return (
     <div>
         {/* add login form */}
+        <h1>Login to your account</h1>
         <button onClick={() => router.push("/")}>Login</button>
     </div>
   )
