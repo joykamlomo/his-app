@@ -9,8 +9,7 @@ export default function Home({ title }) {
   return (
     <>
       <Layout>
-      <h1>My Page Title</h1>
-      <p>My page content goes here...</p>
+      <h1>Content</h1>
     </Layout>
     </>
   )
