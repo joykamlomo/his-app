@@ -1,11 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Sidebar from './common/Sidebar';
+import Header from './common/Header';
 
-function Layout() {
+const Layout = ({ children }) => {
   return (
-    <>
-    <div></div>
-    </>
-  )
-}
+    <div className="flex h-screen">
+      <Sidebar />
+      <div className="flex flex-col flex-1">
+        <Header />
+        <main className="flex-1 p-4">{children}</main>
+      </div>
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;
