@@ -1,8 +1,10 @@
-import { useRouter } from 'next/router'
 import React from 'react'
+import { useRouter } from 'next/router'
 
-export default function Login() {
-  const router = useRouter()
+function Login() {
+  const router = useRouter();
+
+  // rest of the component logic
   return (
     <div>
       <h1>Login to your account</h1>
@@ -11,3 +13,4 @@ export default function Login() {
   )
 }
 
+export default Login;
