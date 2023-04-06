@@ -1,0 +1,12 @@
+mkdir pages
+mkdir pages/dashboard
+mkdir pages/dashboard/customers
+mkdir pages/dashboard/policies
+mkdir pages/dashboard/claims
+mkdir pages/dashboard/payments
+mkdir pages/dashboard/reports
+mkdir pages/dashboard/support
+mkdir services
+mkdir redux
+mkdir utils
+mkdir mock-data

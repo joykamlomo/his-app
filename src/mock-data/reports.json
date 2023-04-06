@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "userId": 1,
+      "policyId": 1,
+      "paymentAmount": 5000,
+      "status": "Paid",
+      "createdAt": "2022-01-05T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "policyId": 2,
+      "paymentAmount": 1000,
+      "status": "Paid",
+      "createdAt": "2022-01-08T11:45:00.000Z"
+    }
+  ]
+  

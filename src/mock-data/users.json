@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "policyId": 1,
+      "createdAt": "2022-01-01T10:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "policyId": 2,
+      "createdAt": "2022-01-02T14:45:00.000Z"
+    }
+  ]
+  
