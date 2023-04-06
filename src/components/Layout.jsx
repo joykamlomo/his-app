@@ -16,7 +16,7 @@ const Layout = ({ children, title }) => {
       <Sidebar />
       <div className="flex flex-col flex-1">
         <Header />
-        <main className="flex-1 p-4">{children}</main>
+        <main role='status' className="flex-1 p-4 animate-pulse">{children}</main>
       </div>
     </div></>
   );

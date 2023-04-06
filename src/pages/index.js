@@ -9,8 +9,10 @@ export default function Home({ title }) {
   return (
     <>
      <Layout>
-        <h1>Dashboard</h1>
-    </Layout>
+        <div className='w-full'>
+        <h1>{title}</h1>
+        </div>
+     </Layout>
     </>
   )
 }
