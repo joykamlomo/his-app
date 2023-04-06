@@ -1,8 +1,11 @@
+import Layout from '@/components/Layout'
 import React from 'react'
 
 function Support() {
   return (
-    <div>Support</div>
+    <Layout>
+      <div>Support</div>
+    </Layout>
   )
 }
 

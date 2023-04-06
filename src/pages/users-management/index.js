@@ -1,8 +1,11 @@
+import Layout from '@/components/Layout'
 import React from 'react'
 
 function Users() {
   return (
-    <div>Users</div>
+    <Layout>
+      <div>Users</div>
+    </Layout>
   )
 }
 

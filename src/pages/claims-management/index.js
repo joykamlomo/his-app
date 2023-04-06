@@ -1,8 +1,11 @@
+import Layout from '@/components/Layout'
 import React from 'react'
 
 function Claims() {
   return (
-    <div>Claims</div>
+    <Layout>
+      <div>Claims</div>
+    </Layout>
   )
 }
 

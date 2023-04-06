@@ -1,8 +1,11 @@
+import Layout from '@/components/Layout'
 import React from 'react'
 
 function Reporting() {
   return (
-    <div>Reporting</div>
+    <Layout>
+      <div>Reporting</div>
+    </Layout>
   )
 }
 

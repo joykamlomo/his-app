@@ -1,8 +1,11 @@
+import Layout from '@/components/Layout'
 import React from 'react'
 
 function Payments() {
   return (
-    <div>Payments</div>
+    <Layout>
+      <div>Payments</div>
+    </Layout>
   )
 }
 
