@@ -1,6 +1,5 @@
 import { BellAlertIcon, MagnifyingGlassIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 import React from 'react';
-import { FaSearch, FaBell, FaCog, FaUser } from 'react-icons/fa';
 
 const Header = () => {
   return (
