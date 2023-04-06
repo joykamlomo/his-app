@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from './common/Sidebar';
 import Header from './common/Header';
 import Head from 'next/head';
+import Breadcrumb from './common/Breadcrumb';
 
 const Layout = ({ children, title }) => {
   return (
@@ -14,9 +15,10 @@ const Layout = ({ children, title }) => {
       </Head>
     <div className="flex h-screen">
       <Sidebar />
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-col flex-1 mx-auto max-w-screen-lg px-4 py-3">
         <Header />
-        <main role='status' className="flex-1 p-4 animate-pulse">{children}</main>
+        {/* <Breadcrumb /> */}
+        <main role='status' className="flex-1 p-4">{children}</main>
       </div>
     </div></>
   );

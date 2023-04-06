@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="text-gray-900 px-4 py-2">
+    <header className="text-gray-900">
       <div className="container mx-auto flex justify-between items-center py-4">
         {/* Search Bar */}
         <div className="flex-1 hidden md:block">
