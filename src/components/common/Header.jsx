@@ -6,9 +6,9 @@ const Header = () => {
     <header className="text-gray-900">
       <div className="container mx-auto flex justify-between items-center py-4">
         {/* Search Bar */}
-        <div className="flex-1 hidden md:block">
+        <div className="flex-1 hidden">
           <div className="relative">
-            <input type="text" className="w-full bg-gray-100 border rounded-full px-4 py-2 focus:outline-none focus:shadow-outline placeholder:text-sm placeholder:tracking-wide placeholder:text-gray-600" placeholder="Claims, payments, reports, policies ..." />
+            <input type="text" className="w-full border-2 rounded-full px-4 py-2 focus:outline-none focus:shadow-outline placeholder:text-sm placeholder:tracking-wide placeholder:text-gray-600" placeholder="Claims, payments, reports, policies ..." />
             <div className="absolute top-0 right-0 mt-3 mr-5">
               <MagnifyingGlassIcon className="w-5 text-gray-900" />
             </div>

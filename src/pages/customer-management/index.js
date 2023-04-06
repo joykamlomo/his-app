@@ -1,12 +1,173 @@
-import Layout from '@/components/Layout'
-import React from 'react'
+import React, { useState } from 'react';
+import PolicyModal from '@/components/modals/PolicyModal';
+import Layout from '@/components/Layout';
+import { MagnifyingGlassIcon, PlusIcon } from '@heroicons/react/24/outline';
 
-function Customer() {
+const policiesData = [
+  { id: 1, name: 'John Doe', policyName: 'Health Insurance', coverage: 'Basic', age: 35, gender: 'Male', deductible: 500, type: '12' },
+  { id: 2, name: 'Jane Smith', policyName: 'Health Insurance', coverage: 'Premium', age: 45, gender: 'Female', deductible: 250, type: '12' },
+  { id: 3, name: 'Bob Johnson', policyName: 'Health Insurance', coverage: 'Basic', age: 29, gender: 'Male', deductible: 1000, type: '12' },
+  { id: 4, name: 'Sarah Lee', policyName: 'Health Insurance', coverage: 'Premium', age: 50, gender: 'Female', deductible: 250, type: '12' },
+  { id: 5, name: 'Tom Davis', policyName: 'Health Insurance', coverage: 'Basic', age: 42, gender: 'Male', deductible: 750, type: '12' },
+];
+
+const Customer = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [newPolicyName, setNewPolicyName] = useState('');
+  const [newPolicyType, setNewPolicyType] = useState('');
+  const [newPolicyPremium, setNewPolicyPremium] = useState('');
+
+  const handleSearchInput = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+    setNewPolicyName('');
+    setNewPolicyType('');
+    setNewPolicyPremium('');
+  };
+
+  const handleNewPolicySubmit = (event) => {
+    event.preventDefault();
+    // TODO: Add new policy to policiesData array
+    handleModalClose();
+  };
+
+  const filteredPolicies = policiesData.filter((policy) => {
+    const nameMatch = policy.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const typeMatch = policy.type.toLowerCase().includes(searchTerm.toLowerCase());
+    return nameMatch || typeMatch;
+  });
+
   return (
     <Layout>
-      <div>Customer</div>
-    </Layout>
-  )
-}
+      <div className="container mx-auto py-4">
+      <div className="flex justify-between items-center mb-8">
+        {/* Search Input */}
+        <div className="flex-1">
+          <div className="relative">
+            <input value={searchTerm} onChange={handleSearchInput} type="text" className="w-full bg-gray-100 border-2 border-gray-900 rounded px-4 py-2 focus:outline-none focus:shadow-outline placeholder:text-sm placeholder:tracking-wide placeholder:text-gray-600" placeholder="Claims, payments, reports, policies ..." />
+            <div className="absolute top-0 right-0 mt-3 mr-5">
+              <MagnifyingGlassIcon className="w-5 text-gray-900" />
+            </div>
+          </div>
+        </div>
+        {/* Create Policy Button */}
+        <div className="flex-1 text-right">
+          <button className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2" onClick={handleModalOpen}>
+            <span>Create Customer</span>
+            <PlusIcon className="w-5 text-white inline-block ml-2" />
+          </button>
+        </div>
+      </div>
+      {/* Policy Table */}
+      
+<div className="relative overflow-x-auto">
+    <table className="w-full text-sm text-left text-gray-500 bordered">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" className="px-6 py-3">
+                Customer name
+                </th>
+                <th scope="col" className="px-6 py-3">
+                Coverage
+                </th>
+                <th scope="col" className="px-6 py-3">
+                Insurance Policy
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Age
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Gender
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Monthly Deduction
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {filteredPolicies.map((policy) => (
+            <tr key={policy.id} className="bg-white border-b">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                {policy.name}
+                </th>
+                <td className="px-6 py-4">
+                {policy.coverage}
+                </td>
+                <td className="px-6 py-4">
+                {policy.policyName}
+                </td>
+                <td className="px-6 py-4">
+                {policy.age}
+                </td>
+                <td className="px-6 py-4">
+                {policy.gender}
+                </td>
+                <td className="px-6 py-4">
+                {policy.deductible}
+                </td>
+                <td className="px-6 py-4 space-x-2 text-sky-600">
+                    <a href=''>View</a>
+                    <a href=''>Edit</a>
+                </td>
+            </tr>
+          ))}
+        </tbody>
+    </table>
+</div>
 
-export default Customer
+      {/* Create Policy Modal */}
+      {modalOpen && (
+        <PolicyModal onClose={handleModalClose}>
+          <form onSubmit={handleNewPolicySubmit}>
+          <div className="mb-6">
+    <label htmlFor="newPolicyName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Customer Name</label>
+    <input value={newPolicyName} onChange={(event) => setNewPolicyName(event.target.value)} type="text" id="newPolicyName" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="newPolicyType" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Coverage</label>
+    <input value={newPolicyType} onChange={(event) => setNewPolicyType(event.target.value)} type="text" id="newPolicyType" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="newPolicyType" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Policy Name</label>
+    <input value={newPolicyType} onChange={(event) => setNewPolicyType(event.target.value)} type="text" id="newPolicyType" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="newPolicyPremium" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Age</label>
+    <input value={newPolicyPremium} onChange={(event) => setNewPolicyPremium(event.target.value)} type="text" id="newPolicyPremium" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="newPolicyType" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
+    <input value={newPolicyType} onChange={(event) => setNewPolicyType(event.target.value)} type="text" id="newPolicyType" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="newPolicyPremium" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Monthly Deduction</label>
+    <input type="text" id="newPolicyPremium" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+           
+            <div className="flex justify-end">
+              <button type="submit" className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2">
+                Create Customer
+              </button>
+            </div>
+          </form>
+        
+        </PolicyModal>
+      )}
+    </div>
+    </Layout>
+  );
+};
+export default Customer;

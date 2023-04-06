@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaSearch, FaPlus } from 'react-icons/fa';
 import PolicyModal from '@/components/modals/PolicyModal';
 import Layout from '@/components/Layout';
+import { MagnifyingGlassIcon, PlusIcon } from '@heroicons/react/24/outline';
 
 const policiesData = [
   { id: 1, name: 'Auto Insurance', type: 'Car', premium: 500 },
@@ -52,56 +52,60 @@ const Policy = () => {
         {/* Search Input */}
         <div className="flex-1">
           <div className="relative">
-            <input type="text" className="w-full bg-gray-200 rounded-full px-4 py-2 pl-10 focus:outline-none focus:shadow-outline" placeholder="Search policies..." value={searchTerm} onChange={handleSearchInput} />
-            <div className="absolute top-0 left-0 mt-3 ml-3">
-              <FaSearch className="text-gray-500" />
+            <input value={searchTerm} onChange={handleSearchInput} type="text" className="w-full bg-gray-100 border-2 border-gray-900 rounded px-4 py-2 focus:outline-none focus:shadow-outline placeholder:text-sm placeholder:tracking-wide placeholder:text-gray-600" placeholder="Claims, payments, reports, policies ..." />
+            <div className="absolute top-0 right-0 mt-3 mr-5">
+              <MagnifyingGlassIcon className="w-5 text-gray-900" />
             </div>
           </div>
         </div>
         {/* Create Policy Button */}
-        <div>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2" onClick={handleModalOpen}>
-            <FaPlus className="inline-block mr-2" />
-            Create Policy
+        <div className="flex-1 text-right">
+          <button className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2" onClick={handleModalOpen}>
+            <span>Create Policy</span>
+            <PlusIcon className="w-5 text-white inline-block ml-2" />
           </button>
         </div>
       </div>
       {/* Policy Table */}
       
-<div class="relative overflow-x-auto">
-    <table class="w-full text-sm text-left text-gray-500 border rounded-md">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+<div className="relative overflow-x-auto">
+    <table className="w-full text-sm text-left text-gray-500 bordered">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                     Insurance name
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                     Type
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                     Premium
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                     Description
                 </th>
             </tr>
         </thead>
         <tbody>
             {filteredPolicies.map((policy) => (
-            <tr key={policy.id} class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr key={policy.id} className="bg-white border-b">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                 {policy.name}
                 </th>
-                <td class="px-6 py-4">
+                <td className="px-6 py-4">
                 {policy.type}
                 </td>
-                <td class="px-6 py-4">
+                <td className="px-6 py-4">
                 {policy.premium}
                 </td>
-                <td class="px-6 py-4">
+                <td className="px-6 py-4">
                     <p>
                       lorem ipsum
                     </p>
+                </td>
+                <td className="px-6 py-4 space-x-2 text-sky-600">
+                    <a href=''>View</a>
+                    <a href=''>Edit</a>
                 </td>
             </tr>
           ))}
@@ -113,30 +117,33 @@ const Policy = () => {
       {modalOpen && (
         <PolicyModal onClose={handleModalClose}>
           <form onSubmit={handleNewPolicySubmit}>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="newPolicyName">
-                Name
-              </label>
-              <input type="text" className="w-full bg-gray-200 rounded-full px-4 py-2 focus:outline-none focus:shadow-outline" id="newPolicyName" value={newPolicyName} onChange={(event) => setNewPolicyName(event.target.value)} />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="newPolicyType">
-                Type
-              </label>
-              <input type="text" className="w-full bg-gray-200 rounded-full px-4 py-2 focus:outline-none focus:shadow-outline" id="newPolicyType" value={newPolicyType} onChange={(event) => setNewPolicyType(event.target.value)} />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2" htmlFor="newPolicyPremium">
-                Premium
-              </label>
-              <input type="text" className="w-full bg-gray-200 rounded-full px-4 py-2 focus:outline-none focus:shadow-outline" id="newPolicyPremium" value={newPolicyPremium} onChange={(event) => setNewPolicyPremium(event.target.value)} />
-            </div>
+          <div className="mb-6">
+    <label htmlFor="newPolicyName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Policy Name</label>
+    <input value={newPolicyName} onChange={(event) => setNewPolicyName(event.target.value)} type="text" id="newPolicyName" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="newPolicyType" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Policy Type</label>
+    <input value={newPolicyType} onChange={(event) => setNewPolicyType(event.target.value)} type="text" id="newPolicyType" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="newPolicyPremium" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Policy Price/Premium</label>
+    <input value={newPolicyPremium} onChange={(event) => setNewPolicyPremium(event.target.value)} type="text" id="newPolicyPremium" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="newPolicyPremium" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+    <input type="text" id="newPolicyPremium" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+  </div>
+           
             <div className="flex justify-end">
-              <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2">
-                Create
+              <button type="submit" className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2">
+                Create Policy
               </button>
             </div>
           </form>
+        
         </PolicyModal>
       )}
     </div>
