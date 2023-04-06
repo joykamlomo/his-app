@@ -10,33 +10,33 @@ const Sidebar = () => {
         <hr className='mt-4'/>
       <div className='mt-4'>
       <h6 className="text-gray-400 text-xs uppercase">menu</h6>
-      <ul className='mt-1 text-gray-700 text-sm tracking-relaxed border-b'>
-        <li className='py-2 px-2 mb-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
+      <div className='py-3 space-y-3 text-gray-700 text-sm tracking-relaxed border-b'>
+        <Link href={'/'} className='py-2 px-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
           <BookmarkSlashIcon className='w-5 mr-1'/>
-          <Link href={''}>Dashboard</Link>
-        </li>
-        <li className='py-2 px-2 mb-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
+          <p>Dashboard</p>
+        </Link>
+        <Link href={'/policy-management/'} className='py-2 px-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
           <BriefcaseIcon className='w-5 mr-1'/>
-          <Link href={''}>Policies</Link>
-        </li>
-        <li className='py-2 px-2 mb-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
+          <p>Policies</p>
+        </Link>
+        <Link href={'/claims-management/'} className='py-2 px-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
           <DocumentCheckIcon className='w-5 mr-1'/>
-          <Link href={''}>Claims</Link>
-        </li>
-        <li className='py-2 px-2 mb-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
+          <p>Claims</p>
+        </Link>
+        <Link href={'/payments-management/'} className='py-2 px-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
           <CurrencyPoundIcon className='w-5 mr-1'/>
-          <Link href={''}>Payments</Link>
-        </li>
-        <li className='py-2 px-2 mb-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
+          <p>Payments</p>
+        </Link>
+        <Link href={'/reportsAndAnalytics/'} className='py-2 px-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
           <DocumentDuplicateIcon className='w-5 mr-1'/>
-          <Link href={''}>Reports & Analytics</Link>
-        </li>
-        <li className='py-2 px-2 mb-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
+          <p>Reports & Analytics</p>
+        </Link>
+        <Link href={'/customer-management/'} className='py-2 px-2 flex items-center rounded w-full hover:bg-gray-900 hover:text-white'>
           <UsersIcon className='w-5 mr-1'/>
-          <Link href={''}>Customers</Link>
-        </li>
+          <p>Customers</p>
+        </Link>
         
-      </ul>
+      </div>
       </div>
     </aside>
   );

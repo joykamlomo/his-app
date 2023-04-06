@@ -8,8 +8,8 @@ export default function Home({ title }) {
   // const title = dashboard;
   return (
     <>
-      <Layout>
-      <h1>Content</h1>
+     <Layout>
+        <h1>Dashboard</h1>
     </Layout>
     </>
   )
