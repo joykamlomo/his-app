@@ -11,26 +11,21 @@ function Login() {
       {/* <h1>Login to your account</h1>
       <button onClick={() => router.push("/")}>Login</button> */}
       <div className='flex-1'>
-      <div className='h-full my-auto '>
+      <div className='flex items-center justify-center h-screen'>
             <img
               className="mx-auto h-12 w-auto hidden"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
               alt="Your Company"
             />
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              Health Insurance System
+            <h2 className="text-6xl font-semibold tracking-tight text-gray-900">
+            MediSys <span className='text-xs'>V 1.1</span>
             </h2>
           </div>
       </div>
       <div className='flex-1'>
-      <div className="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+      <div className="flex min-h-full items-center justify-center px-4 sm:px-6 lg:px-8 h-screen">
         <div className="pt-24 w-full max-w-md space-y-8">
           <div className=''>
-            <img
-              className="mx-auto h-12 w-auto hidden"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt="Your Company"
-            />
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
               Sign in to your account
             </h2>
@@ -44,12 +39,12 @@ function Login() {
                 </label>
                 <input
                   id="email-address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  name="username"
+                  type="username"
+                  autoComplete="username"
                   required
                   className="relative block w-full rounded-t-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="Email address"
+                  placeholder="Username"
                 />
               </div>
               <div>

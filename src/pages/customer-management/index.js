@@ -52,17 +52,23 @@ const Customer = () => {
         {/* Search Input */}
         <div className="flex-1">
           <div className="relative">
-            <input value={searchTerm} onChange={handleSearchInput} type="text" className="w-full bg-gray-100 border-2 border-gray-900 rounded px-4 py-2 focus:outline-none focus:shadow-outline placeholder:text-sm placeholder:tracking-wide placeholder:text-gray-600" placeholder="Claims, payments, reports, policies ..." />
+            <input 
+            value={searchTerm} 
+            onChange={handleSearchInput} 
+            type="text" 
+            className="w-full bg-gray-100 border-2 border-gray-600 rounded px-4 py-2 focus:outline-none focus:shadow-outline placeholder:text-xs placeholder:tracking-wide placeholder:text-indigo-600" placeholder="Claims, payments, reports, policies ..." />
             <div className="absolute top-0 right-0 mt-3 mr-5">
-              <MagnifyingGlassIcon className="w-5 text-gray-900" />
+              <MagnifyingGlassIcon className="w-5 text-indigo-600 font-semibold" />
             </div>
           </div>
         </div>
         {/* Create Policy Button */}
         <div className="flex-1 text-right">
-          <button className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2" onClick={handleModalOpen}>
-            <span>Create Customer</span>
+          <button className="rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 inline-flex" onClick={handleModalOpen}>
+              Create Customer
+            <span className='flex items-center'>
             <PlusIcon className="w-5 text-white inline-block ml-2" />
+            </span>
           </button>
         </div>
       </div>
@@ -72,22 +78,22 @@ const Customer = () => {
     <table className="w-full text-sm text-left text-gray-500 bordered">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                 Customer name
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                 Coverage
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                 Insurance Policy
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                     Age
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                     Gender
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                     Monthly Deduction
                 </th>
             </tr>
@@ -95,25 +101,25 @@ const Customer = () => {
         <tbody>
             {filteredPolicies.map((policy) => (
             <tr key={policy.id} className="bg-white border-b">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                <th scope="row" className="py-4 font-medium text-gray-900 whitespace-nowrap">
                 {policy.name}
                 </th>
-                <td className="px-6 py-4">
+                <td className="py-4">
                 {policy.coverage}
                 </td>
-                <td className="px-6 py-4">
+                <td className="py-4">
                 {policy.policyName}
                 </td>
-                <td className="px-6 py-4">
+                <td className="py-4">
                 {policy.age}
                 </td>
-                <td className="px-6 py-4">
+                <td className="py-4">
                 {policy.gender}
                 </td>
-                <td className="px-6 py-4">
+                <td className="py-4">
                 {policy.deductible}
                 </td>
-                <td className="px-6 py-4 space-x-2 text-sky-600">
+                <td className="py-4 space-x-2 text-indigo-500">
                     <a href=''>View</a>
                     <a href=''>Edit</a>
                 </td>
