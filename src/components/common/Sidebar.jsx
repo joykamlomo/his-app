@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <aside className="w-72 p-4 border-r border-gray-300 shadow-lg bg-gray-800 text-gray-900 font-semibold tracking-wide">
+    <aside className="w-72 p-4 border-r border-gray-300 shadow-xl text-gray-900 font-semibold tracking-wide">
         <h2 className="text-4xl text-amber-600  tracking-wide">WEMUS</h2>
         <p className='text-xs text-indigo-600 tracking-tight my-1 mx-1'>Wella Medical Aid Society</p>
         <hr className='mt-4'/>
