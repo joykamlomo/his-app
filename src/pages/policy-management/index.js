@@ -116,32 +116,96 @@ const Policy = () => {
       {/* Create Policy Modal */}
       {modalOpen && (
         <PolicyModal onClose={handleModalClose}>
-          <form onSubmit={handleNewPolicySubmit}>
-          <div className="mb-6">
-    <label htmlFor="newPolicyName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Policy Name</label>
-    <input value={newPolicyName} onChange={(event) => setNewPolicyName(event.target.value)} type="text" id="newPolicyName" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-  </div>
-
-  <div className="mb-6">
-    <label htmlFor="newPolicyType" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Policy Type</label>
-    <input value={newPolicyType} onChange={(event) => setNewPolicyType(event.target.value)} type="text" id="newPolicyType" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-  </div>
-
-  <div className="mb-6">
-    <label htmlFor="newPolicyPremium" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Policy Price/Premium</label>
-    <input value={newPolicyPremium} onChange={(event) => setNewPolicyPremium(event.target.value)} type="text" id="newPolicyPremium" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-  </div>
-
-  <div className="mb-6">
-    <label htmlFor="newPolicyPremium" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-    <input type="text" id="newPolicyPremium" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-  </div>
+        <form onSubmit={handleNewPolicySubmit}>
            
-            <div className="flex justify-end">
-              <button type="submit" className="rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 inline-flex">
-                Create Policy
-              </button>
+        <div className="border-b border-gray-900/10 pb-12">
+          <h2 className="text-base font-semibold leading-7 text-gray-900">Policy Information</h2>
+          <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
+          
+
+          <div className="mt-5 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-6">
+
+          <div className="col-span-full">
+              <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
+                Policy name
+              </label>
+              <div className="mt-2">
+                <input
+                value={newPolicyName} onChange={(event) => setNewPolicyName(event.target.value)}
+                  type="text"
+                  name="newPolicyName"
+                  id="newPolicyName"
+                  autoComplete="street-address"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
             </div>
+
+            <div className="sm:col-span-3">
+              <label htmlFor="newPolicyPremium" className="block text-sm font-medium leading-6 text-gray-900">
+                Policy price/premium
+              </label>
+              <div className="mt-2">
+                <input
+                value={newPolicyPremium} onChange={(event) => setNewPolicyPremium(event.target.value)}
+                  type="number"
+                  name="newPolicyPremium"
+                  id="newPolicyPremium"
+                  autoComplete="given-name"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-3">
+              <label htmlFor="newPolicyType" className="block text-sm font-medium leading-6 text-gray-900">
+                Type
+              </label>
+              <div className="mt-2">
+                <select
+                value={newPolicyType} onChange={(event) => setNewPolicyType(event.target.value)} 
+                id="newPolicyType"
+                  name="newPolicyType"
+                  autoComplete="country-name"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>Mexico</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="col-span-full">
+              <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
+                About
+              </label>
+              <div className="mt-2">
+                <textarea
+                  id="about"
+                  name="about"
+                  rows={3}
+                  className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6"
+                  defaultValue={''}
+                />
+              </div>
+              <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
+            </div>        
+            {/* end  */}
+          </div>
+        </div>
+
+            <div className="mt-6 flex items-center justify-end gap-x-6">
+            <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="inline-flex rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+            >
+              Save
+            </button>
+          </div>
           </form>
         
         </PolicyModal>
