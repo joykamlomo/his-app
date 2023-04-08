@@ -164,7 +164,7 @@ const Customer = () => {
   </div>
            
             <div className="flex justify-end">
-              <button type="submit" className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2">
+              <button type="submit" className="rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 inline-flex">
                 Create Customer
               </button>
             </div>

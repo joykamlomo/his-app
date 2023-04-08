@@ -61,7 +61,7 @@ const Payments = () => {
         {/* Create Policy Button */}
         <div className="flex-1 text-right">
           <button className="rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 inline-flex" onClick={handleModalOpen}>
-            <span>Create Payment</span>
+            Create Payment
             <span className='flex items-center'>
             <PlusIcon className="w-5 text-white inline-block ml-2" />
             </span>
@@ -140,7 +140,7 @@ const Payments = () => {
   </div>
            
             <div className="flex justify-end">
-              <button type="submit" className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2">
+              <button type="submit" className="rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 inline-flex">
                 Create Payment
               </button>
             </div>

@@ -3,7 +3,7 @@ import React from 'react'
 
 function Button({ buttonName }) {
   return (
-    <button className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2">
+    <button className="rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 inline-flex">
         <span>{ buttonName }</span>
         <PlusIcon className="w-5 text-white inline-block ml-2" />
     </button>

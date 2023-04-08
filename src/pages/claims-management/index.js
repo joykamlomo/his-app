@@ -52,7 +52,7 @@ const Claim = () => {
         {/* Search Input */}
         <div className="flex-1">
           <div className="relative">
-            <input value={searchTerm} onChange={handleSearchInput} type="text" className="w-full bg-gray-100 border-2 border-gray-900 rounded px-4 py-2 focus:outline-none focus:shadow-outline placeholder:text-sm placeholder:tracking-wide placeholder:text-gray-600" placeholder="Claims, payments, reports, policies ..." />
+            <input value={searchTerm} onChange={handleSearchInput} type="text" className="w-full bg-gray-100 border-2 border-gray-600 rounded px-4 py-2 focus:outline-none focus:shadow-outline placeholder:text-xs placeholder:tracking-wide placeholder:text-indigo-600" placeholder="Claims, payments, reports, policies ..." />
             <div className="absolute top-0 right-0 mt-3 mr-5">
               <MagnifyingGlassIcon className="w-5 text-gray-900" />
             </div>
@@ -60,9 +60,11 @@ const Claim = () => {
         </div>
         {/* Create Policy Button */}
         <div className="flex-1 text-right">
-          <button className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2" onClick={handleModalOpen}>
-            <span>Create Claim</span>
+          <button className="rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 inline-flex" onClick={handleModalOpen}>
+            Create Claim
+            <span className='flex items-center'>
             <PlusIcon className="w-5 text-white inline-block ml-2" />
+            </span>
           </button>
         </div>
       </div>
@@ -138,7 +140,7 @@ const Claim = () => {
   </div>
            
             <div className="flex justify-end">
-              <button type="submit" className="bg-gray-900 hover:bg-gray-600 text-white text-sm inline-flex rounded px-4 py-2">
+              <button type="submit" className="rounded bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 inline-flex">
                 Create Claim
               </button>
             </div>
