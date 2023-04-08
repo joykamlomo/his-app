@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <aside className="w-72 p-4 border-r border-gray-300 shadow-xl text-gray-900 font-semibold tracking-wide">
+    <aside className="w-72 p-4 border-r border-gray-300 shadow-xl font-semibold tracking-wide">
         <h2 className="text-4xl text-amber-600  tracking-wide">WEMUS</h2>
         <p className='text-xs text-indigo-600 tracking-tight my-1 mx-1'>Wella Medical Aid Society</p>
         <hr className='mt-4'/>
@@ -39,15 +39,15 @@ const Sidebar = () => {
       </div>
       <h6 className="text-amber-600 text-xs uppercase mt-3">management</h6>
       <div className='py-3 space-y-3 text-indigo-600 text-sm tracking-relaxed'>
-        <Link href={'/policy-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/settings/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
           <p>Settings</p>
           <CogIcon className='w-5 mr-1'/>
         </Link>
-        <Link href={'/policy-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/user-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
           <p>Users</p>
           <UserIcon className='w-5 mr-1'/>
         </Link>
-        <Link href={'/claims-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/data-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
           <p>Data Control</p>
           <DocumentCheckIcon className='w-5 mr-1'/>
         </Link>
