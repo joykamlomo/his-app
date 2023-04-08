@@ -122,7 +122,7 @@ const Claim = () => {
            
            <div className="border-b border-gray-900/10 pb-12">
              <h2 className="text-base font-semibold leading-7 text-gray-900">Claim Information</h2>
-             <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
+             {/* <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p> */}
              
    
              <div className="mt-5 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-6">
@@ -155,9 +155,10 @@ const Claim = () => {
                      autoComplete="country-name"
                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                    >
-                     <option>United States</option>
-                     <option>Canada</option>
-                     <option>Mexico</option>
+                     <option>Type 1</option>
+                     <option>Type 2</option>
+                     <option>Type 3</option>
+                     <option>Type 4</option>
                    </select>
                  </div>
                </div>
@@ -191,7 +192,7 @@ const Claim = () => {
                      defaultValue={''}
                    />
                  </div>
-                 <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
+                 <p className="mt-3 text-sm leading-6 text-gray-600">Write a few statements about the claim.</p>
                </div>        
                {/* end  */}
              </div>
