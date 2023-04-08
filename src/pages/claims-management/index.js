@@ -74,38 +74,41 @@ const Claim = () => {
     <table className="w-full text-sm text-left text-gray-500 bordered">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
-                <th scope="col" className="px-6 py-3">
-                    Claim ID
+                <th scope="col" className="py-3">
+                    ID
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                     Claim name
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                     Claim Type
                 </th>
-                <th scope="col" className="px-6 py-3">
+                <th scope="col" className="py-3">
                     Description
+                </th>
+                <th scope="col" className="py-3">
+                    Actions
                 </th>
             </tr>
         </thead>
         <tbody>
             {filteredPolicies.map((policy) => (
             <tr key={policy.id} className="bg-white border-b">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                <th scope="row" className="py-4 font-medium text-gray-900 whitespace-nowrap">
                 {policy.id}
                 </th>
-                <td className="px-6 py-4">
+                <td className="py-4">
                 {policy.name}
                 </td>
-                <td className="px-6 py-4">
+                <td className="py-4">
                 {policy.type}
                 </td>
-                <td className="px-6 py-4">
+                <td className="py-4">
                     <p>
                       lorem ipsum
                     </p>
                 </td>
-                <td className="px-6 py-4 space-x-2 text-sky-600">
+                <td className="py-4 space-x-2 text-indigo-600">
                     <a href=''>View</a>
                     <a href=''>Edit</a>
                 </td>

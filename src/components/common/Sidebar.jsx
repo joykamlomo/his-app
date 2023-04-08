@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookmarkSlashIcon, BriefcaseIcon, CogIcon, CurrencyPoundIcon, DocumentCheckIcon, DocumentDuplicateIcon, FaceSmileIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline' 
+import { ArrowDownOnSquareIcon, BookmarkSlashIcon, BriefcaseIcon, CogIcon, CurrencyPoundIcon, DocumentCheckIcon, DocumentDuplicateIcon, FaceSmileIcon, UserIcon, UsersIcon } from '@heroicons/react/24/outline' 
 import Link from 'next/link';
 
 const Sidebar = () => {
@@ -41,15 +41,15 @@ const Sidebar = () => {
       <div className='py-3 space-y-3 text-indigo-600 text-sm tracking-relaxed'>
         <Link href={'/settings/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
           <p>Settings</p>
-          <CogIcon className='w-5 mr-1'/>
+          <CogIcon className='w-5'/>
         </Link>
         <Link href={'/user-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
           <p>Users</p>
-          <UserIcon className='w-5 mr-1'/>
+          <UserIcon className='w-5'/>
         </Link>
         <Link href={'/data-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
           <p>Data Control</p>
-          <DocumentCheckIcon className='w-5 mr-1'/>
+          <ArrowDownOnSquareIcon className='w-5'/>
         </Link>
         
       </div>

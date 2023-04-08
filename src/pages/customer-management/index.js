@@ -96,6 +96,9 @@ const Customer = () => {
                 <th scope="col" className="py-3">
                     Monthly Deduction
                 </th>
+                <th scope="col" className="py-3">
+                    Actions
+                </th>
             </tr>
         </thead>
         <tbody>
