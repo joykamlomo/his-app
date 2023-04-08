@@ -10,28 +10,28 @@ const Sidebar = () => {
         <hr className='mt-4'/>
       <div className='mt-4'>
       <h6 className="text-amber-600 text-xs uppercase">menu</h6>
-      <div className='py-3 space-y-3 text-indigo-600 text-sm tracking-relaxed border-b'>
-        <Link href={'/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+      <div className='py-3 space-y-3 text-indigo-600 text-sm tracking-wide border-b'>
+        <Link href={'/'} className='px-3 py-2 flex items-center rounded w-full bg-indigo-600 bg-opacity-90 text-white'>
           <BookmarkSlashIcon className='w-5 mr-1'/>
           <p>Dashboard</p>
         </Link>
-        <Link href={'/policy-management/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/policy-management/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-90 hover:text-white'>
           <BriefcaseIcon className='w-5 mr-1'/>
           <p>Policies</p>
         </Link>
-        <Link href={'/claims-management/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/claims-management/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-90 hover:text-white'>
           <DocumentCheckIcon className='w-5 mr-1'/>
           <p>Claims</p>
         </Link>
-        <Link href={'/payments-management/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/payments-management/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-90 hover:text-white'>
           <CurrencyPoundIcon className='w-5 mr-1'/>
           <p>Payments</p>
         </Link>
-        <Link href={'/reportsAndAnalytics/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/reportsAndAnalytics/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-90 hover:text-white'>
           <DocumentDuplicateIcon className='w-5 mr-1'/>
           <p>Reports & Analytics</p>
         </Link>
-        <Link href={'/customer-management/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/customer-management/'} className='px-3 py-2 flex items-center rounded w-full hover:bg-indigo-600 hover:bg-opacity-90 hover:text-white'>
           <UsersIcon className='w-5 mr-1'/>
           <p>Customers</p>
         </Link>
@@ -39,15 +39,15 @@ const Sidebar = () => {
       </div>
       <h6 className="text-amber-600 text-xs uppercase mt-3">management</h6>
       <div className='py-3 space-y-3 text-indigo-600 text-sm tracking-relaxed'>
-        <Link href={'/settings/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/settings/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-90 hover:text-white'>
           <p>Settings</p>
           <CogIcon className='w-5'/>
         </Link>
-        <Link href={'/user-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/user-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-90 hover:text-white'>
           <p>Users</p>
           <UserIcon className='w-5'/>
         </Link>
-        <Link href={'/data-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-80 hover:text-white'>
+        <Link href={'/data-management/'} className='px-3 py-2 flex items-center justify-between rounded w-full hover:bg-indigo-600 hover:bg-opacity-90 hover:text-white'>
           <p>Data Control</p>
           <ArrowDownOnSquareIcon className='w-5'/>
         </Link>
